@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.png">
+    <title>双11绝密清单</title>
+    <script>
+      window.TDAPP={}
+      window.TDAPP.onEvent=function(){}
+      console.log(window.TDAPP)
+      var script = document.createElement('script')
+      var appid = window.location.pathname.indexOf('xlsx') > -1 ? 'C5FBE4405F8D45679AE95A9101FD0417' : 'E270E891AC904CB3B732AABA33E26468'
+      script.src = 'https://jic.talkingdata.com/app/h5/v1?appid=' + appid + '&vn=1.0.0&vc=0.0.1'
+      document.head.appendChild(script)
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but secret-list doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

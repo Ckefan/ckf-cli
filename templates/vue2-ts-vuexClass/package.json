@@ -1,0 +1,100 @@
+{
+  "name": "qq-user-information-collection-front-php",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint",
+    "tep": "node scripts/template",
+    "com": "node scripts/component"
+  },
+  "husky": {
+    "hooks": {}
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "tslint --project tsconfig.json"
+    ],
+    "src/**/*.{scss}": [
+      "stylelint *.scss"
+    ]
+  },
+  "dependencies": {
+    "@types/clipboard": "^2.0.1",
+    "alife-logger": "^1.8.24",
+    "axios": "^0.19.0",
+    "clipboard": "^2.0.6",
+    "core-js": "^3.4.3",
+    "dayjs": "^1.8.18",
+    "js-cookie": "^2.2.1",
+    "medium-zoom": "^1.0.5",
+    "stylelint-config-standard": "^19.0.0",
+    "vant": "^2.8.1",
+    "vconsole": "^3.3.4",
+    "vue": "^2.6.10",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-class-component": "^7.0.2",
+    "vue-infinite-scroll": "^2.0.2",
+    "vue-property-decorator": "^8.3.0",
+    "vue-router": "^3.1.3",
+    "vuex": "^3.1.2",
+    "vuex-class": "^0.3.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.5",
+    "@types/js-cookie": "^2.2.1",
+    "@types/lodash": "^4.14.149",
+    "@types/mocha": "^5.2.4",
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-e2e-cypress": "^4.1.0",
+    "@vue/cli-plugin-router": "^4.1.0",
+    "@vue/cli-plugin-typescript": "^4.1.0",
+    "@vue/cli-plugin-unit-mocha": "^4.1.0",
+    "@vue/cli-plugin-vuex": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "alife-logger": "^1.8.24",
+    "chai": "^4.1.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "shelljs": "^0.8.3",
+    "stylelint": "^12.0.0",
+    "ts-import-plugin": "^1.6.2",
+    "typescript": "~3.5.3",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^3.6.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "string-quotes": "single",
+      "property-no-unknown": [
+        false,
+        {
+          "ignoreProperties": [
+            "composes"
+          ]
+        }
+      ],
+      "selector-pseudo-class-no-unknown": [
+        false,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,12 +1,10 @@
 /** @format */
-const path = require('path')
-const fs = require('fs-extra')
-const inquirer = require('inquirer')
-const Generator = require('./Generator')
+import fs from 'fs-extra'
+import inquirer from 'inquirer'
+import path from 'path'
+import Generator from './Generator'
 
-module.exports = async function (name, options) {
-  console.log('>>> create.js', name, options)
-
+export default async (name: string, options) => {
   // 当前命令行选择的目录
   const cwd = process.cwd()
   // 需要创建的目录地址
@@ -39,7 +37,6 @@ module.exports = async function (name, options) {
       if (!action) {
         return
       } else if (action === 'overwrite') {
-        // 移除已存在的目录
         console.log('\r\nRemoving...')
         await fs.remove(targetAir)
       }

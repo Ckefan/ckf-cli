@@ -1,9 +1,9 @@
 #! /usr/bin/env node
-/** @format */
 
-const program = require('commander')
-const chalk = require('chalk')
-const figlet = require('figlet')
+import chalk from 'chalk'
+import { program } from 'commander'
+import figlet from 'figlet'
+import create from '../core/create'
 
 program
   .command('create <app-name>')
@@ -11,10 +11,8 @@ program
   // -f or --force 为强制创建，如果创建的目录存在则直接覆盖
   .option('-f, --force', 'overwrite target directory if it exitst')
   .action((name, options) => {
-    // 打印执行结果
-    console.log({ name, options })
     // 在create.js 中执行创建任务
-    require('../lib/create.js')(name, options)
+    create(name, options)
   })
 
 // 配置 config 命令
@@ -55,7 +53,7 @@ program
   })
 
 program
-  .version(`v${require('../package.json').version}`)
+  .version(`v${require('../../package.json').version}`)
   .usage('<command [option]')
 
 // 解析用户执行命令传入参数

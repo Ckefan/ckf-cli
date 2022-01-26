@@ -1,11 +1,10 @@
 /** @format */
 
-const ora = require('ora')
-const inquirer = require('inquirer')
-const chalk = require('chalk')
-const path = require('path')
-const util = require('util')
-const fs = require('fs-extra')
+import chalk from 'chalk'
+import fs from 'fs-extra'
+import inquirer from 'inquirer'
+import ora from 'ora'
+import path from 'path'
 
 // 添加加载动画
 async function recursionCopy(templateUrl, cwdUrl) {
@@ -31,7 +30,9 @@ async function recursionCopy(templateUrl, cwdUrl) {
 }
 
 class Genrator {
-  constructor(name, targetDir) {
+  public name: string
+  public targetDir: string
+  constructor(name:string, targetDir:string) {
     // 目录名称
     this.name = name
     //创建位置
@@ -60,7 +61,7 @@ class Genrator {
   // 1) 复制本地模版到当前命令目录
   async copy(repo) {
     // 模版文件目录
-    const templateUrl = path.join(__dirname, `../templates/${repo}`)
+    const templateUrl = path.join(__dirname, `../../templates/${repo}`)
     const targetUrl = path.join(process.cwd(), this.name)
 
     // 2) 递归复制
@@ -68,7 +69,6 @@ class Genrator {
       if (err) return console.error(err)
       fs.copy(templateUrl, targetUrl, (err) => {
         if (err) return console.error(err)
-        console.log('复制成功')
       })
     })
   }
@@ -90,4 +90,4 @@ class Genrator {
     console.log('  npm run dev\r\n')
   }
 }
-module.exports = Genrator
+export default Genrator

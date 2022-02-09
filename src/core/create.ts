@@ -1,10 +1,9 @@
-/** @format */
 import fs from 'fs-extra'
 import inquirer from 'inquirer'
 import path from 'path'
 import Generator from './Generator'
 
-export default async (name: string, options) => {
+export default async (name: string, options: { force: any }) => {
   // 当前命令行选择的目录
   const cwd = process.cwd()
   // 需要创建的目录地址
